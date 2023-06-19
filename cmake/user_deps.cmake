@@ -1,5 +1,5 @@
 #
-# Copyright 2023 The titan-search Authors.
+# Copyright 2023 The Carbin Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,19 +14,26 @@
 # limitations under the License.
 #
 
-#[[
-carbin_cc_binary(
-        NAME hashes_example
-        SOURCES hashes_example.cc
-        DEPS tedis::tedis ${CARBIN_DEPS_LINK}
-        COPTS ${USER_CXX_FLAGS}
-)
-]]
-#[[
-carbin_cc_binary(
-        NAME foo_ex
-        SOURCES foo_ex.cc
-        DEPS changeme::foo ${CARBIN_DEPS_LINK}
-        COPTS ${USER_CXX_FLAGS}
-)
-]]
+if (CARBIN_BUILD_TEST)
+    enable_testing()
+    #include(require_gtest)
+    #include(require_gmock)
+endif (CARBIN_BUILD_TEST)
+
+if (CARBIN_BUILD_BENCHMARK)
+    #include(require_benchmark)
+endif ()
+
+find_package(Threads REQUIRED)
+#include(require_turbo)
+
+set(CARBIN_DEPS_LINK
+        #${TURBO_LIB}
+        ${CARBIN_SYSTEM_DYLINK}
+        )
+
+
+
+
+
+

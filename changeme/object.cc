@@ -13,9 +13,6 @@
 // limitations under the License.
 //
 
-#include <gtest/gtest.h>
-#include "changeme/foo.h"
-
-TEST(tt, foo) {
-    EXPECT_EQ(2, foo(1));
+int object(int a) {
+    return  a +1;
 }

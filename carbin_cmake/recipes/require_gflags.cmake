@@ -1,4 +1,3 @@
-#
 # Copyright 2023 The Carbin Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,33 +13,13 @@
 # limitations under the License.
 #
 
-if (CARBIN_BUILD_TEST)
-    enable_testing()
-    include(require_gtest)
-    include(require_gmock)
-endif (CARBIN_BUILD_TEST)
 
-if (CARBIN_BUILD_BENCHMARK)
-    include(require_benchmark)
-endif ()
-
-set(CARBIN_SYSTEM_DYLINK)
-if (APPLE)
-    find_library(CoreFoundation CoreFoundation)
-    list(APPEND CARBIN_SYSTEM_DYLINK ${CoreFoundation} pthread)
-elseif (${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
-    list(APPEND CARBIN_SYSTEM_DYLINK rt dl pthread)
-endif ()
-
-#include(require_turbo)
-
-set(CARBIN_DEPS_LINK
-        #${TURBO_LIB}
-        ${CARBIN_SYSTEM_DYLINK}
-        )
-
-
-
-
-
-
+carbin_add_package(
+        NAME gflags
+        GITHUB_REPOSITORY gflags/gflags
+        GIT_TAG v2.2.2
+        OPTIONS
+        BUILD_STATIC_LIBS=ON
+        BUILD_TESTING=OFF
+        CMAKE_POSITION_INDEPENDENT_CODE=ON
+)

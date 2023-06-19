@@ -16,12 +16,50 @@
 
 carbin_cc_library(
         NAMESPACE changeme
-        NAME changeme
+        NAME foo
         SOURCES
         foo.cc
         COPTS
         ${USER_CXX_FLAGS}
         DEPS
         ${CARBIN_DEPS_LINK}
+        PUBLIC
+)
+
+carbin_cc_library(
+        NAMESPACE changeme
+        NAME object
+        SOURCES
+        object.cc
+        COPTS
+        ${USER_CXX_FLAGS}
+        DEPS
+        ${CARBIN_DEPS_LINK}
+        PUBLIC
+)
+
+carbin_cc_library(
+        NAMESPACE changeme
+        NAME share
+        SOURCES
+        shared.cc
+        COPTS
+        ${USER_CXX_FLAGS}
+        DEPS
+        ${CARBIN_DEPS_LINK}
+        changeme::object
+        SHARED
+)
+
+carbin_cc_binary(
+        NAMESPACE changeme
+        NAME shared_main
+        SOURCES
+        main.cc
+        COPTS
+        ${USER_CXX_FLAGS}
+        DEPS
+        ${CARBIN_DEPS_LINK}
+        changeme::share_shared
         PUBLIC
 )

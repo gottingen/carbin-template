@@ -1,5 +1,5 @@
 #
-# Copyright 2023 The titan-search Authors.
+# Copyright 2023 The Carbin Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,19 +14,6 @@
 # limitations under the License.
 #
 
-#[[
-carbin_cc_binary(
-        NAME hashes_example
-        SOURCES hashes_example.cc
-        DEPS tedis::tedis ${CARBIN_DEPS_LINK}
-        COPTS ${USER_CXX_FLAGS}
-)
-]]
-#[[
-carbin_cc_binary(
-        NAME foo_ex
-        SOURCES foo_ex.cc
-        DEPS changeme::foo ${CARBIN_DEPS_LINK}
-        COPTS ${USER_CXX_FLAGS}
-)
-]]
+
+find_package(OpenSSL)
+include_directories(${OPENSSL_INCLUDE_DIR})

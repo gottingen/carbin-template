@@ -15,8 +15,8 @@
 #
 
 #include(FindArm)
-include(FindSSE)
-include(FindAvx)
+include(carbin_sse)
+include(carbin_avx)
 
 if(CXX_AVX2_FOUND)
     message(STATUS "AVX2 SUPPORTED for CXX")

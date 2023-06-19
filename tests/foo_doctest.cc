@@ -13,9 +13,11 @@
 // limitations under the License.
 //
 
-#include <gtest/gtest.h>
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+
+#include <doctest/doctest.h>
 #include "changeme/foo.h"
 
-TEST(tt, foo) {
-    EXPECT_EQ(2, foo(1));
+TEST_CASE("foo") {
+    CHECK_EQ(foo(1), 2);
 }

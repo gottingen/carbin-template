@@ -14,6 +14,7 @@
 # limitations under the License.
 #
 include(carbin_option)
+include(carbin_config_cxx_opts)
 include(carbin_print)
 include(carbin_cc_library)
 include(carbin_cc_test)
@@ -27,13 +28,15 @@ include(carbin_outof_source)
 include(carbin_platform)
 include(carbin_pkg_dump)
 
+include(carbin_deps)
+if (CARBIN_ENABLE_SIMD)
+    include(carbin_simd)
+endif ()
+
 CARBIN_ENSURE_OUT_OF_SOURCE_BUILD("must out of source dir")
 
 #if (NOT DEV_MODE AND ${PROJECT_VERSION} MATCHES "0.0.0")
 #    carbin_error("PROJECT_VERSION must be set in file project_profile or set -DDEV_MODE=true for develop debug")
 #endif()
-
-include(carbin_cxx_config)
-include(carbin_deps)
 
 

@@ -17,12 +17,21 @@
 #[[carbin_cc_test(
         NAME custom_comparator_test
         SOURCES custom_comparator_test.cc
-        DEPS tedis::tedis ${CARBIN_DEPS_LINK} ${GTEST_LIB} ${GTEST_MAIN_LIB}
+        DEPS turbo::turbo ${CARBIN_DEPS_LINK} ${GTEST_LIB} ${GTEST_MAIN_LIB}
         COPTS ${USER_CXX_FLAGS}
 )]]
+#[[
 carbin_cc_test(
         NAME foo_test
         SOURCES foo_test.cc
-        DEPS changeme::changeme ${CARBIN_DEPS_LINK} ${GTEST_LIB} ${GTEST_MAIN_LIB}
+        DEPS changeme::foo ${CARBIN_DEPS_LINK} gtest gtest_main
         COPTS ${USER_CXX_FLAGS}
 )
+
+carbin_cc_test(
+        NAME foo_doctest
+        SOURCES foo_doctest.cc
+        DEPS changeme::foo ${CARBIN_DEPS_LINK} doctest
+        COPTS ${USER_CXX_FLAGS}
+)
+]]

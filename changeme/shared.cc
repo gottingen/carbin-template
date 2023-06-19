@@ -12,10 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
+#include "changeme/object.h"
+#include "changeme/shared.h"
 
-#include <gtest/gtest.h>
-#include "changeme/foo.h"
-
-TEST(tt, foo) {
-    EXPECT_EQ(2, foo(1));
+int shared(int a) {
+    return  object(a);
 }

@@ -1,4 +1,3 @@
-#
 # Copyright 2023 The Carbin Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,21 +13,9 @@
 # limitations under the License.
 #
 
-##############################################################
-set(CMAKE_CXX_FLAGS "-std=c++17")
-set(CMAKE_CXX_FLAGS_DEBUG "-g3 -O0")
-set(CMAKE_CXX_FLAGS_RELEASE "-O2 -DNDEBUG")
-set(CMAKE_CXX_FLAGS_RELWITHDEBINFO  "-g -O2")
 
-if(NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE Release)
-endif ()
-
-if(DEFINED ENV{CARBIN_CXX_FLAGS})
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} $ENV{CARBIN_CXX_FLAGS}")
-endif ()
-
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${USER_CXX_FLAGS}")
-
-###################
-list(APPEND USER_CXX_FLAGS "-ftls-model=global-dynamic" "-Wno-deprecated-declarations")
+carbin_add_package(
+        NAME doctest
+        GITHUB_REPOSITORY onqtam/doctest
+        GIT_TAG v2.4.11
+)

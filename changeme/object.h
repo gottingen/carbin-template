@@ -13,9 +13,9 @@
 // limitations under the License.
 //
 
-#include <gtest/gtest.h>
-#include "changeme/foo.h"
 
-TEST(tt, foo) {
-    EXPECT_EQ(2, foo(1));
-}
+#ifndef CARBIN_TEMPLATE_OBJECT_H
+#define CARBIN_TEMPLATE_OBJECT_H
+
+int object(int a);
+#endif //CARBIN_TEMPLATE_OBJECT_H
