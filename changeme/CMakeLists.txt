@@ -13,7 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
+###########################################################################
+# below are examples, after initialization, modify it to your own.
+###########################################################################
 carbin_cc_library(
         NAMESPACE changeme
         NAME foo
