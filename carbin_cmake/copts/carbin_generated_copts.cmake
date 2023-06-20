@@ -49,10 +49,9 @@ list(APPEND CARBIN_GCC_FLAGS
         "-Wno-unused-parameter"
         "-Wno-unused-function"
         "-Wwrite-strings"
-        "-Wno-class-memaccess"
+        "-Wclass-memaccess"
         "-Wno-sign-compare"
         "-DNOMINMAX"
-        "-D__CONST__="
         )
 
 list(APPEND CARBIN_GCC_TEST_FLAGS
@@ -94,7 +93,6 @@ list(APPEND CARBIN_LLVM_FLAGS
         "-Wunused-local-typedefs"
         "-Wunused-result"
         "-Wno-vla"
-        "-D__CONST__="
         "-Wwrite-strings"
         "-Wno-float-conversion"
         "-Wno-implicit-float-conversion"

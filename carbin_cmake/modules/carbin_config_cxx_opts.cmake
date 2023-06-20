@@ -1,6 +1,6 @@
 
 include(carbin_generated_copts)
-include(carbin_print_list)
+include(carbin_print)
 
 set(CARBIN_LSAN_LINKOPTS "")
 set(CARBIN_HAVE_LSAN OFF)

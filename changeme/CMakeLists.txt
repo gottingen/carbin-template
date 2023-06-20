@@ -20,7 +20,7 @@ carbin_cc_library(
         SOURCES
         foo.cc
         COPTS
-        ${USER_CXX_FLAGS}
+        ${CARBIN_CXX_OPTIONS}
         DEPS
         ${CARBIN_DEPS_LINK}
         PUBLIC
@@ -32,7 +32,7 @@ carbin_cc_library(
         SOURCES
         object.cc
         COPTS
-        ${USER_CXX_FLAGS}
+        ${CARBIN_CXX_OPTIONS}
         DEPS
         ${CARBIN_DEPS_LINK}
         PUBLIC
@@ -44,7 +44,7 @@ carbin_cc_library(
         SOURCES
         shared.cc
         COPTS
-        ${USER_CXX_FLAGS}
+        ${CARBIN_CXX_OPTIONS}
         DEPS
         ${CARBIN_DEPS_LINK}
         changeme::object
@@ -57,7 +57,7 @@ carbin_cc_binary(
         SOURCES
         main.cc
         COPTS
-        ${USER_CXX_FLAGS}
+        ${CARBIN_CXX_OPTIONS}
         DEPS
         ${CARBIN_DEPS_LINK}
         changeme::share_shared

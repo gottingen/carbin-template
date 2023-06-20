@@ -17,7 +17,7 @@
 include(CMakeParseArguments)
 include(carbin_config_cxx_opts)
 include(carbin_install_dirs)
-include(carbin_print_list)
+include(carbin_print)
 
 function(carbin_cc_binary)
 

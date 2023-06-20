@@ -26,14 +26,15 @@ set(PROJECT_VERSION "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT
 
 list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/carbin_cmake)
 list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
-list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/carbin_cmake/modules)
-list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/carbin_cmake/package)
-list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/carbin_cmake/recipes)
-list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/carbin_cmake/simd)
-list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/copts)
 
+#######################################################################
+# warning
+# in carbin_cmake directory, caution to modify files in that dir
 include(carbin_module)
 
+##################################################################
+#
+# in cmake directory
 include(user_deps)
 include(user_cxx_config)
 
