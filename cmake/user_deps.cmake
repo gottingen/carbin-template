@@ -18,6 +18,7 @@ if (CARBIN_BUILD_TEST)
     enable_testing()
     #include(require_gtest)
     #include(require_gmock)
+    #include(require_doctest)
 endif (CARBIN_BUILD_TEST)
 
 if (CARBIN_BUILD_BENCHMARK)
@@ -27,11 +28,18 @@ endif ()
 find_package(Threads REQUIRED)
 #include(require_turbo)
 
+############################################################
+#
+# add you libs to the CARBIN_DEPS_LINK variable eg as turbo
+# so you can and system pthread and rt, dl already add to
+# CARBIN_SYSTEM_DYLINK, using it for fun.
+##########################################################
 set(CARBIN_DEPS_LINK
         #${TURBO_LIB}
         ${CARBIN_SYSTEM_DYLINK}
         )
-
+list(REMOVE_DUPLICATES CARBIN_DEPS_LINK)
+carbin_print_list_label("Denpendcies:" CARBIN_DEPS_LINK)
 
 
 

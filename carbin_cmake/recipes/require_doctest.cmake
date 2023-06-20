@@ -14,8 +14,8 @@
 #
 
 
-carbin_add_package(
-        NAME doctest
-        GITHUB_REPOSITORY onqtam/doctest
-        GIT_TAG v2.4.11
-)
+find_path(DOCTEST_INCLUDE_PATH NAMES doctest/doctest.h)
+include_directories(${DOCTEST_INCLUDE_PATH})
+if((NOT DOCTEST_INCLUDE_PATH))
+    carbin_error(FATAL_ERROR "Fail to find turbo")
+endif()

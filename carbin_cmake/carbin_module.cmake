@@ -53,6 +53,7 @@ endif ()
 
 if (CARBIN_DEPS_ENABLE)
     list(APPEND CMAKE_PREFIX_PATH ${PROJECT_SOURCE_DIR}/carbin)
+    include_directories(${CARBIN_DEPS_PREFIX})
 endif ()
 
 if (CARBIN_USE_SYSTEM_INCLUDES)

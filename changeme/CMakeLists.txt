@@ -16,6 +16,7 @@
 ###########################################################################
 # below are examples, after initialization, modify it to your own.
 ###########################################################################
+###carbin_example
 carbin_cc_library(
         NAMESPACE changeme
         NAME foo
@@ -65,3 +66,4 @@ carbin_cc_binary(
         changeme::share_shared
         PUBLIC
 )
+###carbin_example

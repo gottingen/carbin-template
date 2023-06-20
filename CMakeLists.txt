@@ -26,20 +26,30 @@ set(PROJECT_VERSION "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT
 
 list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/carbin_cmake)
 list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
-
+#################################################################
+#
+# modify the CARBIN_DEPS_PREFIX to you prefix if needed.
+# for example when you install you deps to "/opt/handsome/guy
+# modify as set(CARBIN_DEPS_PREFIX /opt/handsome/guy)
+#################################################################
+set(CARBIN_DEPS_PREFIX ${PROJECT_SOURCE_DIR}/carbin)
 #######################################################################
 # warning
 # in carbin_cmake directory, caution to modify files in that dir
+######################################################################
 include(carbin_module)
 
 ##################################################################
 #
-# in cmake directory
+# your cmake directory ${PROJECT_SOURCE_DIR}/cmake, do things here
+#################################################################
 include(user_deps)
 include(user_cxx_config)
 
 add_subdirectory(changeme)
-
+####################################################################
+# belows are auto, edit it be cation
+####################################################################
 if (CARBIN_BUILD_TEST)
     add_subdirectory(tests)
 endif ()
@@ -53,13 +63,6 @@ if (CARBIN_BUILD_EXAMPLES)
 endif ()
 
 install(DIRECTORY ${PROJECT_NAME}
-        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-        FILES_MATCHING
-        PATTERN "*.inc"
-        PATTERN "*.h"
-        )
-
-install(DIRECTORY ${PROJECT_BINARY_DIR}/${PROJECT_NAME}
         DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
         FILES_MATCHING
         PATTERN "*.inc"
