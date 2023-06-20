@@ -13,7 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
+####################################################################################
+# generate by carbin package manager tools for titan-search
+# https://github.com/gottingen/carbin
+####################################################################################
 cmake_minimum_required(VERSION 3.15)
 
 project(changeme CXX)
@@ -62,6 +65,9 @@ if (CARBIN_BUILD_EXAMPLES)
     add_subdirectory(examples)
 endif ()
 
+##############################################
+# header installing
+#############################################
 install(DIRECTORY ${PROJECT_NAME}
         DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
         FILES_MATCHING

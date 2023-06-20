@@ -52,8 +52,13 @@ if (CONDA_ENV_ENABLE)
 endif ()
 
 if (CARBIN_DEPS_ENABLE)
-    list(APPEND CMAKE_PREFIX_PATH ${PROJECT_SOURCE_DIR}/carbin)
-    include_directories(${CARBIN_DEPS_PREFIX})
+    list(APPEND CMAKE_PREFIX_PATH ${CARBIN_DEPS_PREFIX})
+    include_directories(${CARBIN_DEPS_PREFIX}/include)
+    link_directories(${CARBIN_DEPS_PREFIX}/lib)
+endif ()
+
+if (CARBIN_INSTALL_LIB)
+    set(CMAKE_INSTALL_LIBDIR lib)
 endif ()
 
 if (CARBIN_USE_SYSTEM_INCLUDES)

@@ -38,6 +38,7 @@ option(CARBIN_ENABLE_ARCH "" ON)
 
 option(CARBIN_STATUS_PRINT "carbin print or not, default on" ON)
 
+option(CARBIN_INSTALL_LIB "avoid centos install to lib64" ON)
 #################################
 #user defines
 ######################################
