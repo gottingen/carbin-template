@@ -22,4 +22,14 @@
 #                                -DCARBIN_BUILD_EXAMPLES=OFF -DBUILD_SHARED_LIBRARY=OFF \
 #                                -DBUILD_STATIC_LIBRARY=ON \
 #                                -DCMAKE_BUILD_TYPE=release
-#######################################################################################3
+#######################################################################################
+#
+# google benchmark
+#google/benchmark@v1.8.0 -DBENCHMARK_ENABLE_TESTING=OFF
+#########################################################################
+#
+# doctest for testing
+#doctest/doctest@v2.4.11 -DDOCTEST_WITH_MAIN_IN_STATIC_LIB=OFF -DDOCTEST_WITH_TESTS=OFF
+##########################################################################
+# json
+#nlohmann/json@v3.11.2 -DJSON_BuildTests=OFF
